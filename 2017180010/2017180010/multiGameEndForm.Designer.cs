@@ -1,6 +1,6 @@
 ﻿namespace _2017180010
 {
-    partial class multiGameEndForm
+    partial class MultiGameEndForm
     {
         /// <summary>
         /// Required designer variable.

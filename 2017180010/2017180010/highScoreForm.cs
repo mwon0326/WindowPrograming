@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _2017180010
 {
-    public partial class highScoreForm : Form
+    public partial class HighScoreForm : Form
     {
-        public highScoreForm()
+        public HighScoreForm()
         {
             InitializeComponent();
         }

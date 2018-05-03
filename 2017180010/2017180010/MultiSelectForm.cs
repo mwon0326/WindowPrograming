@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace _2017180010
 {
-    public partial class single_SelectForm : Form
+    public partial class MultiSelectForm : Form
     {
-        public single_SelectForm()
+        public MultiSelectForm()
         {
             InitializeComponent();
         }
 
         private void Selectbutton_Click(object sender, EventArgs e)
         {
-            singleEasyGameForm easy = new singleEasyGameForm();
-            singleNormalGameForm normal = new singleNormalGameForm();
-            singleHardGameForm hard = new singleHardGameForm();
+            MultiEasyGameForm easy = new MultiEasyGameForm();
+            MultiNormalGameForm normal = new MultiNormalGameForm();
+            MultiHardGameForm hard = new MultiHardGameForm();
 
             if (easyButton.Checked)
                 easy.Show();
@@ -31,21 +31,6 @@ namespace _2017180010
                 hard.Show();
 
             this.Close();
-        }
-
-        private void hardButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void normalButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void easyButton_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

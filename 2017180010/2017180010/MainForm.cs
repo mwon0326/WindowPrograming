@@ -19,14 +19,14 @@ namespace _2017180010
 
         private void singleButton_Click(object sender, EventArgs e)
         {
-            single_SelectForm single = new single_SelectForm();
+            SingleSelectForm single = new SingleSelectForm();
             single.ShowDialog();
             this.Hide();
         }
 
         private void mutiButton_Click(object sender, EventArgs e)
         {
-            multi_SelectForm muti = new multi_SelectForm();
+            MultiSelectForm muti = new MultiSelectForm();
             muti.ShowDialog();
             this.Hide();
         }
@@ -40,7 +40,7 @@ namespace _2017180010
 
         private void highScoreButton_Click(object sender, EventArgs e)
         {
-            highScoreForm highScore = new highScoreForm();
+            HighScoreForm highScore = new HighScoreForm();
             highScore.ShowDialog();
         }
     }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _2017180010
 {
-    public partial class multiHardGameForm : Form
+    public partial class MultiHardGameForm : Form
     {
-        public multiHardGameForm()
+        public MultiHardGameForm()
         {
             InitializeComponent();
         }

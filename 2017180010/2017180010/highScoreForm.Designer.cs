@@ -1,6 +1,6 @@
 ﻿namespace _2017180010
 {
-    partial class highScoreForm
+    partial class HighScoreForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _2017180010
 {
-    public partial class singleNormalGameForm : Form
+    public partial class SingleNormalGameForm : Form
     {
-        public singleNormalGameForm()
+        public SingleNormalGameForm()
         {
             InitializeComponent();
         }

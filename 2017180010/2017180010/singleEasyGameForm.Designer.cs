@@ -1,6 +1,6 @@
 ﻿namespace _2017180010
 {
-    partial class singleEasyGameForm
+    partial class SingleEasyGameForm
     {
         /// <summary>
         /// Required designer variable.

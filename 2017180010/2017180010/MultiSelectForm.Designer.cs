@@ -1,6 +1,6 @@
 ﻿namespace _2017180010
 {
-    partial class multi_SelectForm
+    partial class MultiSelectForm
     {
         /// <summary>
         /// Required designer variable.

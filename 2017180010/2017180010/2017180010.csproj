@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="highScoreForm.cs">
+    <Compile Include="HighScoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="highScoreForm.Designer.cs">
-      <DependentUpon>highScoreForm.cs</DependentUpon>
+    <Compile Include="HighScoreForm.Designer.cs">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -57,82 +57,82 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="multiGameEndForm.cs">
+    <Compile Include="MultiGameEndForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="multiGameEndForm.Designer.cs">
-      <DependentUpon>multiGameEndForm.cs</DependentUpon>
+    <Compile Include="MultiGameEndForm.Designer.cs">
+      <DependentUpon>MultiGameEndForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="multiHardGameForm.cs">
+    <Compile Include="MultiHardGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="multiHardGameForm.Designer.cs">
-      <DependentUpon>multiHardGameForm.cs</DependentUpon>
+    <Compile Include="MultiHardGameForm.Designer.cs">
+      <DependentUpon>MultiHardGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="multi_SelectForm.cs">
+    <Compile Include="MultiSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="multi_SelectForm.Designer.cs">
-      <DependentUpon>multi_SelectForm.cs</DependentUpon>
+    <Compile Include="MultiSelectForm.Designer.cs">
+      <DependentUpon>MultiSelectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="multiEasyGameForm.cs">
+    <Compile Include="MultiEasyGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="multiEasyGameForm.Designer.cs">
-      <DependentUpon>multiEasyGameForm.cs</DependentUpon>
+    <Compile Include="MultiEasyGameForm.Designer.cs">
+      <DependentUpon>MultiEasyGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="multiNormalGameForm.cs">
+    <Compile Include="MultiNormalGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="multiNormalGameForm.Designer.cs">
-      <DependentUpon>multiNormalGameForm.cs</DependentUpon>
+    <Compile Include="MultiNormalGameForm.Designer.cs">
+      <DependentUpon>MultiNormalGameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="singleEasyGameForm.cs">
+    <Compile Include="SingleEasyGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="singleEasyGameForm.Designer.cs">
-      <DependentUpon>singleEasyGameForm.cs</DependentUpon>
+    <Compile Include="SingleEasyGameForm.Designer.cs">
+      <DependentUpon>SingleEasyGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="singleHardGameForm.cs">
+    <Compile Include="SingleHardGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="singleHardGameForm.Designer.cs">
-      <DependentUpon>singleHardGameForm.cs</DependentUpon>
+    <Compile Include="SingleHardGameForm.Designer.cs">
+      <DependentUpon>SingleHardGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="singleNormalGameForm.cs">
+    <Compile Include="SingleNormalGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="singleNormalGameForm.Designer.cs">
-      <DependentUpon>singleNormalGameForm.cs</DependentUpon>
+    <Compile Include="SingleNormalGameForm.Designer.cs">
+      <DependentUpon>SingleNormalGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="single_SelectForm.cs">
+    <Compile Include="SingleSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="single_SelectForm.Designer.cs">
-      <DependentUpon>single_SelectForm.cs</DependentUpon>
+    <Compile Include="SingleSelectForm.Designer.cs">
+      <DependentUpon>SingleSelectForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="highScoreForm.resx">
-      <DependentUpon>highScoreForm.cs</DependentUpon>
+    <EmbeddedResource Include="HighScoreForm.resx">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="multiGameEndForm.resx">
-      <DependentUpon>multiGameEndForm.cs</DependentUpon>
+    <EmbeddedResource Include="MultiGameEndForm.resx">
+      <DependentUpon>MultiGameEndForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="multiHardGameForm.resx">
-      <DependentUpon>multiHardGameForm.cs</DependentUpon>
+    <EmbeddedResource Include="MultiHardGameForm.resx">
+      <DependentUpon>MultiHardGameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="multi_SelectForm.resx">
-      <DependentUpon>multi_SelectForm.cs</DependentUpon>
+    <EmbeddedResource Include="MultiSelectForm.resx">
+      <DependentUpon>MultiSelectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="multiEasyGameForm.resx">
-      <DependentUpon>multiEasyGameForm.cs</DependentUpon>
+    <EmbeddedResource Include="MultiEasyGameForm.resx">
+      <DependentUpon>MultiEasyGameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="multiNormalGameForm.resx">
-      <DependentUpon>multiNormalGameForm.cs</DependentUpon>
+    <EmbeddedResource Include="MultiNormalGameForm.resx">
+      <DependentUpon>MultiNormalGameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,17 +143,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="singleEasyGameForm.resx">
-      <DependentUpon>singleEasyGameForm.cs</DependentUpon>
+    <EmbeddedResource Include="SingleEasyGameForm.resx">
+      <DependentUpon>SingleEasyGameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="singleHardGameForm.resx">
-      <DependentUpon>singleHardGameForm.cs</DependentUpon>
+    <EmbeddedResource Include="SingleHardGameForm.resx">
+      <DependentUpon>SingleHardGameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="singleNormalGameForm.resx">
-      <DependentUpon>singleNormalGameForm.cs</DependentUpon>
+    <EmbeddedResource Include="SingleNormalGameForm.resx">
+      <DependentUpon>SingleNormalGameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="single_SelectForm.resx">
-      <DependentUpon>single_SelectForm.cs</DependentUpon>
+    <EmbeddedResource Include="SingleSelectForm.resx">
+      <DependentUpon>SingleSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

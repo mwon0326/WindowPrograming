@@ -1,6 +1,6 @@
 ﻿namespace _2017180010
 {
-    partial class single_SelectForm
+    partial class SingleSelectForm
     {
         /// <summary>
         /// Required designer variable.
