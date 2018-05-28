@@ -99,15 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\highscore_button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\play_button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\quit_button.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\multi_label.png" />
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +328,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dia_q1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highscore_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_button_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highscore_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit_select.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

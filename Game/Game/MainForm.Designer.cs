@@ -28,42 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.playButton = new System.Windows.Forms.Button();
-            this.highscoreButton = new System.Windows.Forms.Button();
-            this.quitButton = new System.Windows.Forms.Button();
+            this.playButton = new System.Windows.Forms.Panel();
+            this.highscoreButton = new System.Windows.Forms.Panel();
+            this.quitButton = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(107, 274);
+            this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.playButton.Location = new System.Drawing.Point(185, 368);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(315, 63);
-            this.playButton.TabIndex = 0;
-            this.playButton.UseVisualStyleBackColor = true;
-            this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            this.playButton.Size = new System.Drawing.Size(314, 65);
+            this.playButton.TabIndex = 1;
+            this.playButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.playButton_MouseClick);
+            this.playButton.MouseEnter += new System.EventHandler(this.playButton_MouseEnter);
+            this.playButton.MouseLeave += new System.EventHandler(this.playButton_MouseLeave);
             // 
             // highscoreButton
             // 
-            this.highscoreButton.Location = new System.Drawing.Point(107, 343);
+            this.highscoreButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.highscoreButton.Location = new System.Drawing.Point(185, 479);
             this.highscoreButton.Name = "highscoreButton";
-            this.highscoreButton.Size = new System.Drawing.Size(315, 63);
-            this.highscoreButton.TabIndex = 0;
-            this.highscoreButton.UseVisualStyleBackColor = true;
+            this.highscoreButton.Size = new System.Drawing.Size(314, 65);
+            this.highscoreButton.TabIndex = 1;
+            this.highscoreButton.MouseEnter += new System.EventHandler(this.highscoreButton_MouseEnter);
+            this.highscoreButton.MouseLeave += new System.EventHandler(this.highscoreButton_MouseLeave);
             // 
             // quitButton
             // 
-            this.quitButton.Location = new System.Drawing.Point(107, 412);
+            this.quitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.quitButton.Location = new System.Drawing.Point(185, 590);
             this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(315, 63);
-            this.quitButton.TabIndex = 0;
-            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.Size = new System.Drawing.Size(314, 65);
+            this.quitButton.TabIndex = 1;
+            this.quitButton.MouseEnter += new System.EventHandler(this.quitButton_MouseEnter);
+            this.quitButton.MouseLeave += new System.EventHandler(this.quitButton_MouseLeave);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(515, 511);
+            this.ClientSize = new System.Drawing.Size(682, 753);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.highscoreButton);
             this.Controls.Add(this.playButton);
@@ -75,10 +81,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button playButton;
-        private System.Windows.Forms.Button highscoreButton;
-        private System.Windows.Forms.Button quitButton;
+        private System.Windows.Forms.Panel playButton;
+        private System.Windows.Forms.Panel highscoreButton;
+        private System.Windows.Forms.Panel quitButton;
     }
 }
 
