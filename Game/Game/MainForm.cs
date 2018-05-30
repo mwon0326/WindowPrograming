@@ -21,17 +21,17 @@ namespace Game
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            playB = Game.Properties.Resources.play_button;
+            playB = Game.Properties.Resources.play;
             GameImage newplay = new GameImage();
-            playB = newplay.ResizeBitmap(playB, 150, 50);
+            playB = newplay.ResizeBitmap(playB, 200, 50);
 
-            highscoreB = Game.Properties.Resources.highscore_button;
+            highscoreB = Game.Properties.Resources.highscore;
             GameImage newHighscoreB = new GameImage();
             highscoreB = newHighscoreB.ResizeBitmap(highscoreB, 200, 50);
 
-            quitB = Game.Properties.Resources.quit_button;
+            quitB = Game.Properties.Resources.quit;
             GameImage newQuitB = new GameImage();
-            quitB = newQuitB.ResizeBitmap(quitB, 150, 50);
+            quitB = newQuitB.ResizeBitmap(quitB, 200, 50);
 
             playButton.BackgroundImage = playB;
             highscoreButton.BackgroundImage = highscoreB;
@@ -40,16 +40,16 @@ namespace Game
 
         private void playButton_MouseEnter(object sender, EventArgs e)
         {
-            Bitmap focusPlay = Game.Properties.Resources.play_select;
+            Bitmap focusPlay = Game.Properties.Resources.s_play;
             GameImage newfocusPlay = new GameImage();
-            focusPlay = newfocusPlay.ResizeBitmap(focusPlay, 150, 50);
+            focusPlay = newfocusPlay.ResizeBitmap(focusPlay, 200, 50);
 
             playButton.BackgroundImage = focusPlay;
         }
 
         private void highscoreButton_MouseEnter(object sender, EventArgs e)
         {
-            Bitmap focusHigh = Game.Properties.Resources.highscore_select;
+            Bitmap focusHigh = Game.Properties.Resources.s_highscore;
             GameImage newfocusHigh = new GameImage();
             focusHigh = newfocusHigh.ResizeBitmap(focusHigh, 200, 50);
 
@@ -63,9 +63,9 @@ namespace Game
 
         private void quitButton_MouseEnter(object sender, EventArgs e)
         {
-            Bitmap focusQuit = Game.Properties.Resources.quit_select;
+            Bitmap focusQuit = Game.Properties.Resources.s_quit;
             GameImage newfocusQuit = new GameImage();
-            focusQuit = newfocusQuit.ResizeBitmap(focusQuit, 150, 50);
+            focusQuit = newfocusQuit.ResizeBitmap(focusQuit, 200, 50);
 
             quitButton.BackgroundImage = focusQuit;
         }

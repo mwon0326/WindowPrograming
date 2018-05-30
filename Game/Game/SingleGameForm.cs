@@ -60,12 +60,12 @@ namespace Game
             }
         }
 
-        private void SingleEasyGameForm_Load(object sender, EventArgs e)
+        public void SingleEasyGameForm_Load(object sender, EventArgs e)
         {
             StartGame();
         }
 
-        private void StartGame()
+        public void StartGame()
         {
             Random r = new Random();
             bool check = false;
@@ -101,7 +101,7 @@ namespace Game
             }
         }
 
-        private void picture_Click(object sender, EventArgs e)
+        public void picture_Click(object sender, EventArgs e)
         {
             if (pic_click)
                 return;
@@ -153,7 +153,7 @@ namespace Game
             SuccCheck();
         }
 
-        private void SuccCheck()
+        public void SuccCheck()
         {
             foreach (Status statusC in status)
             {
@@ -163,7 +163,7 @@ namespace Game
             gameTimer.Stop();
         }
 
-        private void CloseThreading()
+        public void CloseThreading()
         {
             Thread.Sleep(1000);
 
@@ -176,12 +176,12 @@ namespace Game
             pic_click = false;
         }
 
-        private void gameTimer_Tick(object sender, EventArgs e)
+        public void gameTimer_Tick(object sender, EventArgs e)
         {
             timer += 1;
         }
 
-        private void ImageChange(PictureBox pic, int value)
+        public void ImageChange(PictureBox pic, int value)
         {
             GameImage newImage = new GameImage();
             Bitmap bitmap;

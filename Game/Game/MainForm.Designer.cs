@@ -35,7 +35,8 @@
             // 
             // playButton
             // 
-            this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.playButton.AutoSize = true;
+            this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.playButton.Location = new System.Drawing.Point(185, 368);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(314, 65);
@@ -46,7 +47,8 @@
             // 
             // highscoreButton
             // 
-            this.highscoreButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.highscoreButton.AutoSize = true;
+            this.highscoreButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.highscoreButton.Location = new System.Drawing.Point(185, 479);
             this.highscoreButton.Name = "highscoreButton";
             this.highscoreButton.Size = new System.Drawing.Size(314, 65);
@@ -56,7 +58,8 @@
             // 
             // quitButton
             // 
-            this.quitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.quitButton.AutoSize = true;
+            this.quitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.quitButton.Location = new System.Drawing.Point(185, 590);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(314, 65);
@@ -77,6 +80,7 @@
             this.Text = "짝 맞추기 게임";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

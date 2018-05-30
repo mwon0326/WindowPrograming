@@ -73,6 +73,16 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap easy {
+            get {
+                object obj = ResourceManager.GetObject("easy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap easy_button {
             get {
                 object obj = ResourceManager.GetObject("easy_button", resourceCulture);
@@ -213,9 +223,9 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap highscore_button {
+        internal static System.Drawing.Bitmap highscore {
             get {
-                object obj = ResourceManager.GetObject("highscore_button", resourceCulture);
+                object obj = ResourceManager.GetObject("highscore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +233,9 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap highscore_select {
+        internal static System.Drawing.Bitmap multi {
             get {
-                object obj = ResourceManager.GetObject("highscore_select", resourceCulture);
+                object obj = ResourceManager.GetObject("multi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +243,9 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap multi_label {
+        internal static System.Drawing.Bitmap normal {
             get {
-                object obj = ResourceManager.GetObject("multi_label", resourceCulture);
+                object obj = ResourceManager.GetObject("normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +263,9 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap play_button {
+        internal static System.Drawing.Bitmap play {
             get {
-                object obj = ResourceManager.GetObject("play_button", resourceCulture);
+                object obj = ResourceManager.GetObject("play", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +273,9 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap play_select {
+        internal static System.Drawing.Bitmap quit {
             get {
-                object obj = ResourceManager.GetObject("play_select", resourceCulture);
+                object obj = ResourceManager.GetObject("quit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +283,9 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap quit_button {
+        internal static System.Drawing.Bitmap s_easy {
             get {
-                object obj = ResourceManager.GetObject("quit_button", resourceCulture);
+                object obj = ResourceManager.GetObject("s_easy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +293,9 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap quit_select {
+        internal static System.Drawing.Bitmap s_highscore {
             get {
-                object obj = ResourceManager.GetObject("quit_select", resourceCulture);
+                object obj = ResourceManager.GetObject("s_highscore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +303,39 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap single_label {
+        internal static System.Drawing.Bitmap s_normal {
             get {
-                object obj = ResourceManager.GetObject("single_label", resourceCulture);
+                object obj = ResourceManager.GetObject("s_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_play {
+            get {
+                object obj = ResourceManager.GetObject("s_play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_quit {
+            get {
+                object obj = ResourceManager.GetObject("s_quit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap single {
+            get {
+                object obj = ResourceManager.GetObject("single", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
