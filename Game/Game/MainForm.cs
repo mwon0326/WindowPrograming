@@ -48,6 +48,7 @@ namespace Game
 
             kurbi = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 20.0f, 600, 150);
             kurbi.setPosition(400, 450);
+
             previousTime = DateTime.Now;
         }
 

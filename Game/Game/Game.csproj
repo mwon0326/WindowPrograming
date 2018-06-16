@@ -112,6 +112,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\KAMIKZOM.ttf" />
     <None Include="Resources\multi_label.png" />
   </ItemGroup>
   <ItemGroup>
@@ -436,9 +437,6 @@
     <None Include="Resources\single_s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\single_background.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ground.png" />
   </ItemGroup>
   <ItemGroup>
@@ -455,6 +453,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kurbi_role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kurbi_pan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kurbi_run1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kurbi_star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

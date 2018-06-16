@@ -251,11 +251,31 @@ namespace Game.Properties {
         }
         
         /// <summary>
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static byte[] KAMIKZOM {
+            get {
+                object obj = ResourceManager.GetObject("KAMIKZOM", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Bitmap kriby_walk {
             get {
                 object obj = ResourceManager.GetObject("kriby_walk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap kurbi_pan {
+            get {
+                object obj = ResourceManager.GetObject("kurbi_pan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +296,16 @@ namespace Game.Properties {
         internal static System.Drawing.Bitmap kurbi_run {
             get {
                 object obj = ResourceManager.GetObject("kurbi_run", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap kurbi_star {
+            get {
+                object obj = ResourceManager.GetObject("kurbi_star", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +366,16 @@ namespace Game.Properties {
         internal static System.Drawing.Bitmap single {
             get {
                 object obj = ResourceManager.GetObject("single", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap single_background {
+            get {
+                object obj = ResourceManager.GetObject("single_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
