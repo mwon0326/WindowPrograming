@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Drawing.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
@@ -13,15 +14,18 @@ namespace Game
 {
     public partial class MultiGameForm : Form
     {
+        GameImage background;
+        Bitmap backGround;
         GameImage back;
+        GameImage pan;
         int[] game;
         Status[] status;
         PictureBox[] picture;
         bool pic_click = false;
-        int openCount = 0;
+        int openCount = 0, drawCount = 0;
         int timer = 0;
         int close1, close2;
-        int levelTag;
+        int levelTag, panWid = 0, pandHei = 0;
         const int EASY_P = 100;
         const int MINUS = 10;
         const int NORMAL_P = 200;
@@ -30,7 +34,63 @@ namespace Game
         int player1Score = 0;
         int player2Score = 0;
         int rotation = 0;
-        int prevKey;
+        int prevKey, bgSpeed = 100, bgOffset = 0;
+        DateTime previousTime;
+        AnimationImage kirby1, kirby2, kirbyS1, kirbyS2;
+        int kirbyTag = 0;
+
+        private void MultiGameForm_Paint(object sender, PaintEventArgs e)
+        {
+            for (int x = bgOffset; x < 1200; x += 400)
+                e.Graphics.DrawImage(backGround, x, 0, 400, 700);
+
+            e.Graphics.DrawImage(pan.ResizeBitmap, 10, 10);
+
+            if (kirbyTag == 0)
+            {
+                kirby1.draw(e.Graphics);
+                kirby2.draw(e.Graphics);
+            }
+            else if (kirbyTag == 1)
+            {
+                kirbyS1.draw(e.Graphics);
+                kirbyS2.draw(e.Graphics);
+
+                if (drawCount >= 16)
+                {
+                    kirbyTag = 0;
+                    drawCount = 0;
+                }
+            }
+        }
+
+        private void imageTimer_Tick(object sender, EventArgs e)
+        {
+            var now = DateTime.Now;
+            var elapsed = now - previousTime;
+            previousTime = now;
+            var msec = (int)elapsed.TotalMilliseconds;
+
+            bgOffset -= bgSpeed * msec / 1000;
+            if (bgOffset < -400)
+                bgOffset += 400;
+
+            if (kirbyTag == 0)
+            {
+                kirby1.updateFrame(msec);
+                kirby2.updateFrame(msec);
+            }
+            else if (kirbyTag == 1)
+            {
+                kirbyS1.updateFrame(msec);
+                kirbyS2.updateFrame(msec);
+            }
+
+            Invalidate();
+
+            if (kirbyTag == 1)
+                drawCount++;
+        }
 
         public MultiGameForm(int tag)
         {
@@ -62,16 +122,52 @@ namespace Game
                 picture[i].Left = ((i % level) * 5 + (i % level) * 80) + 10;
                 picture[i].Top = ((i / level) * 5 + (i / level) * 100) + 10;
                 picture[i].Name = i.ToString();
-                gamePan.Controls.Add(picture[i]);
-                
+                gamePan.Controls.Add(picture[i]);               
             }
+            gamePan.Left = 15;
+            gamePan.Top = 15;
+            panWid = gamePan.Width + 10;
+            pandHei = gamePan.Height + 10;
         }
 
         private void MultiGameForm_Load(object sender, EventArgs e)
         {
+            this.ClientSize = new Size(1200, 700);
+            background = new GameImage(Game.Properties.Resources.multi_back, 400, 700);
+            backGround = background.ResizeBitmap;
+
+            pan = new GameImage(Game.Properties.Resources.kurbi_pan, panWid, pandHei);
+
+            kirby1 = new AnimationImage(Game.Properties.Resources.kirby_run1, 8, 20.0f, 600, 150);
+            kirby2 = new AnimationImage(Game.Properties.Resources.kirby_run2, 8, 20.0f, 600, 150);
+
+            kirbyS1 = new AnimationImage(Game.Properties.Resources.kirby1, 8, 8.0f, 600, 150);
+            kirbyS2 = new AnimationImage(Game.Properties.Resources.kirby2, 8, 8.0f, 600, 150);
+
+            if (levelTag == 1)
+            {
+                kirby1.setPosition(600, 420);
+                kirbyS1.setPosition(600, 420);
+                kirby2.setPosition(600, 530);
+                kirbyS2.setPosition(600, 530);
+            }
+            else if (levelTag == 2)
+            {
+                kirby1.setPosition(950, 420);
+                kirbyS1.setPosition(950, 420);
+                kirby2.setPosition(950, 530);
+                kirbyS2.setPosition(950, 530);
+            }
+
             StartGame();
+            playerScore1.Left = 900;
+            playerScore1.Top = 20;
+            playerScore2.Left = 900;
+            playerScore2.Top = playerScore1.Bottom + 100;
+
             playerScore1.Text = "1P Score : " + player1Score;
             playerScore2.Text = "2P Score : " + player2Score;
+            previousTime = DateTime.Now;
         }
 
         public void StartGame()
@@ -156,6 +252,7 @@ namespace Game
                             else if (rotation % 2 == 1)
                                 player2Score += NORMAL_P;
                         }
+                        kirbyTag = 1;
                     }
                     else
                     {
@@ -179,7 +276,6 @@ namespace Game
                 else
                     status[num] = Status.OPEN;
             }
-
             playerScore1.Text = "1P Score : " + player1Score;
             playerScore2.Text = "2P Score : " + player2Score;
             SuccCheck();

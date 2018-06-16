@@ -263,6 +263,46 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap kirby_run1 {
+            get {
+                object obj = ResourceManager.GetObject("kirby_run1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap kirby_run2 {
+            get {
+                object obj = ResourceManager.GetObject("kirby_run2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap kirby1 {
+            get {
+                object obj = ResourceManager.GetObject("kirby1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap kirby2 {
+            get {
+                object obj = ResourceManager.GetObject("kirby2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap kriby_walk {
             get {
                 object obj = ResourceManager.GetObject("kriby_walk", resourceCulture);
@@ -316,6 +356,16 @@ namespace Game.Properties {
         internal static System.Drawing.Bitmap multi {
             get {
                 object obj = ResourceManager.GetObject("multi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap multi_back {
+            get {
+                object obj = ResourceManager.GetObject("multi_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -259,7 +259,22 @@
   <data name="KAMIKZOM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KAMIKZOM.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="kirby1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kirby1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kirby2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kirby2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kirby_run1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kirby_run1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kirby_run2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kirby_run2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kurbi_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kurbi_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="multi_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\multi_back.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

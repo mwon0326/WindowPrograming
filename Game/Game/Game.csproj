@@ -469,5 +469,20 @@
   <ItemGroup>
     <None Include="Resources\kurbi_star.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kirby_run1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kirby_run2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kirby1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kirby2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multi_back.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
