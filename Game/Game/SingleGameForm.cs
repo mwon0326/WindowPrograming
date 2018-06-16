@@ -15,7 +15,7 @@ namespace Game
 
     public partial class SingleGameForm : Form
     {
-        Bitmap back;
+        GameImage back;
         int[] game;
         Status[] status;
         PictureBox[] picture;
@@ -24,6 +24,10 @@ namespace Game
         int timer = 0;
         int close1, close2;
         int levelTag;
+        int score = 0;
+        const int EASY_P = 100;
+        const int MINUS = 10;
+        const int NORMAL_P = 200;
 
         public SingleGameForm(int tag)
         {
@@ -62,7 +66,9 @@ namespace Game
 
         public void SingleEasyGameForm_Load(object sender, EventArgs e)
         {
+            SingleGameForm single = new SingleGameForm(levelTag);
             StartGame();
+            scoreLabel.Text = "Score :" + score;
         }
 
         public void StartGame()
@@ -94,10 +100,8 @@ namespace Game
 
                 game[i] = templ;
                 status[i] = Status.CLOSE;
-                back = Game.Properties.Resources.back;
-                GameImage newback = new GameImage();
-                back = newback.ResizeBitmap(back, 80, 100);
-                picture[i].Image = back;
+                back = new GameImage(Game.Properties.Resources.back, 80, 100);
+                picture[i].Image = back.ResizeBitmap;
             }
         }
 
@@ -132,6 +136,10 @@ namespace Game
                     {
                         status[match] = Status.MATCH;
                         status[num] = Status.MATCH;
+                        if (levelTag == 1)
+                            score += EASY_P;
+                        else if (levelTag == 2)
+                            score += NORMAL_P;
                     }
                     else
                     {
@@ -142,6 +150,8 @@ namespace Game
 
                         Thread th = new Thread(new ThreadStart(CloseThreading));
                         th.Start();
+                        if (score != 0)
+                            score -= MINUS;
                     }
 
                     openCount++;
@@ -150,6 +160,7 @@ namespace Game
                     status[num] = Status.OPEN;
             }
 
+            scoreLabel.Text = "Score :" + score;
             SuccCheck();
         }
 
@@ -183,168 +194,141 @@ namespace Game
 
         public void ImageChange(PictureBox pic, int value)
         {
-            GameImage newImage = new GameImage();
-            Bitmap bitmap;
+            GameImage bitmap;
             switch((value))
             {
                 case 0:
-                    bitmap = Game.Properties.Resources.spade_a;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_a, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 1:
-                    bitmap = Game.Properties.Resources.spade_2;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_2, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 2:
-                    bitmap = Game.Properties.Resources.spade_3;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_3, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 3:
-                    bitmap = Game.Properties.Resources.spade_4;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_4, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 4:
-                    bitmap = Game.Properties.Resources.spade_5;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_5, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 5:
-                    bitmap = Game.Properties.Resources.spade_6;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_6, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 6:
-                    bitmap = Game.Properties.Resources.spade_7;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_7, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 7:
-                    bitmap = Game.Properties.Resources.spade_8;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_8, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 8:
-                    bitmap = Game.Properties.Resources.spade_9;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_9, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 9:
-                    bitmap = Game.Properties.Resources.spade_10;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_10, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 10:
-                    bitmap = Game.Properties.Resources.spade_j;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_j, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 11:
-                    bitmap = Game.Properties.Resources.spade_q;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_q, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 12:
-                    bitmap = Game.Properties.Resources.spade_k;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.spade_k, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 13:
-                    bitmap = Game.Properties.Resources.heart_a;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_a, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 14:
-                    bitmap = Game.Properties.Resources.heart_2;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_2, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 15:
-                    bitmap = Game.Properties.Resources.heart_3;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_3, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 16:
-                    bitmap = Game.Properties.Resources.heart_4;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_4, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 17:
-                    bitmap = Game.Properties.Resources.heart_5;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_5, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 18:
-                    bitmap = Game.Properties.Resources.heart_6;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_6, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 19:
-                    bitmap = Game.Properties.Resources.heart_7;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_7, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 20:
-                    bitmap = Game.Properties.Resources.heart_8;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_8, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 21:
-                    bitmap = Game.Properties.Resources.heart_9;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_9, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 22:
-                    bitmap = Game.Properties.Resources.heart_10;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_10, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 23:
-                    bitmap = Game.Properties.Resources.heart_j;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_j, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 24:
-                    bitmap = Game.Properties.Resources.heart_q;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_q, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 case 25:
-                    bitmap = Game.Properties.Resources.heart_k;
-                    bitmap = newImage.ResizeBitmap(bitmap, 80, 100);
-                    pic.Image = bitmap;
+                    bitmap = new GameImage(Game.Properties.Resources.heart_k, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
                     break;
 
                 default:
-                    pic.Image = back;
+                    pic.Image = back.ResizeBitmap;
                     break;
             }
         }

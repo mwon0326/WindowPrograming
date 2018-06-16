@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimationImage.cs" />
+    <Compile Include="DoubleBufferPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GameImage.cs" />
-    <Compile Include="GamePlay.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +64,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,14 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="SelectForm.resx">
       <DependentUpon>SelectForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +398,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\s_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\high.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\high_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\easy_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multi_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kriby_walk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kurbi_run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

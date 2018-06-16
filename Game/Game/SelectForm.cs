@@ -12,72 +12,26 @@ namespace Game
 {
     public partial class SelectForm : Form
     {
-        Bitmap single, multi;
-        Bitmap easy, normal;
-        Bitmap selectEasy, selectNormal;
+        GameImage single, multi;
+        GameImage easy, normal;
+        GameImage selectE, selectN;
+        GameImage background;
+        Bitmap backGround;
+        int bgSpeed = 100;
+        int bgOffset = 0;
+        DateTime previousTime;
 
-        private void singleEasyButton_MouseEnter(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-            singleEasyButton.BackgroundImage = selectEasy;
-        }
+            var now = DateTime.Now;
+            var elapsed = now - previousTime;
+            previousTime = now;
+            var msec = (int)elapsed.TotalMilliseconds;
 
-        private void singleEasyButton_MouseLeave(object sender, EventArgs e)
-        {
-            singleEasyButton.BackgroundImage = easy;
-        }
-
-        private void singleNormalButton_MouseEnter(object sender, EventArgs e)
-        {
-            singleNormalButton.BackgroundImage = selectNormal;
-        }
-
-        private void singleNormalButton_MouseLeave(object sender, EventArgs e)
-        {
-            singleNormalButton.BackgroundImage = normal;
-        }
-
-        private void multiEasyButton_MouseEnter(object sender, EventArgs e)
-        {
-            multiEasyButton.BackgroundImage = selectEasy;
-        }
-
-        private void multiEasyButton_MouseLeave(object sender, EventArgs e)
-        {
-            multiEasyButton.BackgroundImage = easy;
-        }
-
-        private void multiNormalButton_MouseEnter(object sender, EventArgs e)
-        {
-            multiNormalButton.BackgroundImage = selectNormal;
-        }
-
-        private void multiNormalButton_MouseLeave(object sender, EventArgs e)
-        {
-            multiNormalButton.BackgroundImage = normal;
-        }
-
-        private void singleEasyButton_Click(object sender, EventArgs e)
-        {
-            SingleGameForm single = new SingleGameForm(1);
-            single.ShowDialog();
-        }
-
-        private void singleNormalButton_Click(object sender, EventArgs e)
-        {
-            SingleGameForm single = new SingleGameForm(2);
-            single.ShowDialog();
-        }
-
-        private void multiEasyButton_Click(object sender, EventArgs e)
-        {
-            MultiGameForm multi = new MultiGameForm(1);
-            multi.ShowDialog();
-        }
-
-        private void multiNormalButton_Click(object sender, EventArgs e)
-        {
-            MultiGameForm multi = new MultiGameForm(2);
-            multi.ShowDialog();
+            bgOffset -= bgSpeed * msec / 1000;
+            if (bgOffset < -400)
+                bgOffset += 400;
+            Invalidate();
         }
 
         public SelectForm()
@@ -87,40 +41,32 @@ namespace Game
 
         private void SelectForm_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImage(single, 25, 50);
-            e.Graphics.DrawImage(multi, 225, 50);
+            for (int x = bgOffset; x < 900; x += 400)
+                e.Graphics.DrawImage(backGround, x, 0, 400, 700);
+
+            e.Graphics.DrawImage(single.ResizeBitmap, 25, 50);
+            e.Graphics.DrawImage(multi.ResizeBitmap, 225, 50);
         }
 
         private void SelectForm_Load(object sender, EventArgs e)
         {
-            GameImage newSingle = new GameImage();
-            single = Game.Properties.Resources.single;
-            single = newSingle.ResizeBitmap(single, 200, 50);
+            this.ClientSize = new Size(900, 700);
+            single = new GameImage(Game.Properties.Resources.single, 200, 50);
+            multi = new GameImage(Game.Properties.Resources.multi, 200, 50);
 
-            GameImage newMulti = new GameImage();
-            multi = Game.Properties.Resources.multi;
-            multi = newMulti.ResizeBitmap(multi, 200, 50);
+            easy = new GameImage(Game.Properties.Resources.easy, 200, 50);
+            normal = new GameImage(Game.Properties.Resources.normal, 200, 50);
 
-            easy = Game.Properties.Resources.easy;
-            normal = Game.Properties.Resources.normal;
+            selectE = new GameImage(Game.Properties.Resources.easy_s, 200, 50);
+            selectN = new GameImage(Game.Properties.Resources.normal_s, 200, 50);
 
-            GameImage newEasy = new GameImage();
-            easy = newEasy.ResizeBitmap(easy, 130, 50);
-            GameImage newNormal = new GameImage();
-            normal = newNormal.ResizeBitmap(normal, 130, 50);
+            singleEasyButton.BackgroundImage = easy.ResizeBitmap;
+            singleNormalButton.BackgroundImage = normal.ResizeBitmap;
+            multiEasyButton.BackgroundImage = easy.ResizeBitmap;
+            multiNormalButton.BackgroundImage = normal.ResizeBitmap;
 
-            GameImage newSelectE = new GameImage();
-            selectEasy = Game.Properties.Resources.s_easy;
-            selectEasy = newSelectE.ResizeBitmap(selectEasy, 130, 50);
-
-            GameImage newSelectN = new GameImage();
-            selectNormal = Game.Properties.Resources.s_normal;
-            selectNormal = newSelectN.ResizeBitmap(selectNormal, 130, 50);
-
-            singleEasyButton.BackgroundImage = easy;
-            singleNormalButton.BackgroundImage = normal;
-            multiEasyButton.BackgroundImage = easy;
-            multiNormalButton.BackgroundImage = normal;
+            background = new GameImage(Game.Properties.Resources.background,400,700);
+            backGround = background.ResizeBitmap;
         }
     }
 }

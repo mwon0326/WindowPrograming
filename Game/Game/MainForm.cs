@@ -12,7 +12,13 @@ namespace Game
 {
     public partial class MainForm : Form
     {
-        Bitmap playB, highscoreB, quitB;
+        GameImage playB, highscoreB, quitB, titleL;
+        GameImage background;
+        Bitmap backGround;
+        AnimationImage kurbi;
+        int bgSpeed = 100;
+        int bgOffset = 0;
+        DateTime previousTime;
 
         public MainForm()
         {
@@ -21,69 +27,90 @@ namespace Game
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            playB = Game.Properties.Resources.play;
-            GameImage newplay = new GameImage();
-            playB = newplay.ResizeBitmap(playB, 200, 50);
+            playB = new GameImage(Game.Properties.Resources.start, 200, 50);
+            highscoreB = new GameImage(Game.Properties.Resources.high, 200, 50);
+            quitB = new GameImage(Game.Properties.Resources.quit, 200, 50);
+            titleL = new GameImage(Game.Properties.Resources.title, 400, 200);
 
-            highscoreB = Game.Properties.Resources.highscore;
-            GameImage newHighscoreB = new GameImage();
-            highscoreB = newHighscoreB.ResizeBitmap(highscoreB, 200, 50);
+            playButton.BackgroundImage = playB.ResizeBitmap;
+            highscoreButton.BackgroundImage = highscoreB.ResizeBitmap;
+            quitButton.BackgroundImage = quitB.ResizeBitmap;
+            title.BackgroundImage = titleL.ResizeBitmap;
 
-            quitB = Game.Properties.Resources.quit;
-            GameImage newQuitB = new GameImage();
-            quitB = newQuitB.ResizeBitmap(quitB, 200, 50);
+            this.ClientSize = new Size(900, 700);
+            playButton.Left = (this.ClientSize.Width - playButton.Width) / 2;
+            highscoreButton.Left = (this.ClientSize.Width - highscoreButton.Width) / 2;
+            quitButton.Left = (this.ClientSize.Width - quitButton.Width) / 2;
+            title.Left = (this.ClientSize.Width - title.Width) / 2;
 
-            playButton.BackgroundImage = playB;
-            highscoreButton.BackgroundImage = highscoreB;
-            quitButton.BackgroundImage = quitB;
+            background = new GameImage(Game.Properties.Resources.background, 400, 700);
+            backGround = background.ResizeBitmap;
+
+            kurbi = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 8.0f, 600, 150);
+            kurbi.setPosition(400, 450);
+            previousTime = DateTime.Now;
         }
 
         private void playButton_MouseEnter(object sender, EventArgs e)
         {
-            Bitmap focusPlay = Game.Properties.Resources.s_play;
-            GameImage newfocusPlay = new GameImage();
-            focusPlay = newfocusPlay.ResizeBitmap(focusPlay, 200, 50);
-
-            playButton.BackgroundImage = focusPlay;
-        }
-
-        private void highscoreButton_MouseEnter(object sender, EventArgs e)
-        {
-            Bitmap focusHigh = Game.Properties.Resources.s_highscore;
-            GameImage newfocusHigh = new GameImage();
-            focusHigh = newfocusHigh.ResizeBitmap(focusHigh, 200, 50);
-
-            highscoreButton.BackgroundImage = focusHigh;
-        }
-
-        private void highscoreButton_MouseLeave(object sender, EventArgs e)
-        {
-            highscoreButton.BackgroundImage = highscoreB;
-        }
-
-        private void quitButton_MouseEnter(object sender, EventArgs e)
-        {
-            Bitmap focusQuit = Game.Properties.Resources.s_quit;
-            GameImage newfocusQuit = new GameImage();
-            focusQuit = newfocusQuit.ResizeBitmap(focusQuit, 200, 50);
-
-            quitButton.BackgroundImage = focusQuit;
-        }
-
-        private void quitButton_MouseLeave(object sender, EventArgs e)
-        {
-            quitButton.BackgroundImage = quitB;
+            GameImage focusPlay = new GameImage(Game.Properties.Resources.start_s, 200, 50);
+            playButton.BackgroundImage = focusPlay.ResizeBitmap;
         }
 
         private void playButton_MouseLeave(object sender, EventArgs e)
         {
-            playButton.BackgroundImage = playB;
+            playButton.BackgroundImage = playB.ResizeBitmap;
         }
 
-        private void playButton_MouseClick(object sender, MouseEventArgs e)
+        private void highscoreButton_MouseEnter(object sender, EventArgs e)
         {
-            SelectForm form = new SelectForm();
-            form.ShowDialog();
+            GameImage focusHigh = new GameImage(Game.Properties.Resources.high_s, 200, 50);
+            highscoreButton.BackgroundImage = focusHigh.ResizeBitmap;
+        }
+
+        private void highscoreButton_MouseLeave(object sender, EventArgs e)
+        {
+            highscoreButton.BackgroundImage = highscoreB.ResizeBitmap;
+        }
+
+        private void quitButton_MouseEnter(object sender, EventArgs e)
+        {
+            GameImage focusQuit = new GameImage(Game.Properties.Resources.quit_s, 200, 50);
+            quitButton.BackgroundImage = focusQuit.ResizeBitmap;        
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            var now = DateTime.Now;
+            var elapsed = now - previousTime;
+            previousTime = now;
+            var msec = (int)elapsed.TotalMilliseconds;
+
+            bgOffset -= bgSpeed * msec / 1000;
+            if (bgOffset < -400)
+                bgOffset += 400;
+
+            kurbi.updateFrame(msec);
+            Invalidate();
+        }
+
+        private void MainForm_Paint(object sender, PaintEventArgs e)
+        {
+            for (int x = bgOffset; x < 900; x += 400)
+                e.Graphics.DrawImage(backGround, x, 0, 400, 700);
+
+            kurbi.draw(e.Graphics);
+        }
+
+        private void quitButton_MouseLeave(object sender, EventArgs e)
+        {
+            quitButton.BackgroundImage = quitB.ResizeBitmap;
+        }
+
+        private void playButton_MouseClick(object sender, EventArgs e)
+        {
+            SelectForm s = new SelectForm();
+            s.ShowDialog();
         }
     }
 }

@@ -28,66 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.playButton = new System.Windows.Forms.Panel();
-            this.highscoreButton = new System.Windows.Forms.Panel();
-            this.quitButton = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.title = new Game.DoubleBufferPanel();
+            this.quitButton = new Game.DoubleBufferPanel();
+            this.highscoreButton = new Game.DoubleBufferPanel();
+            this.playButton = new Game.DoubleBufferPanel();
             this.SuspendLayout();
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 30;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.title.Location = new System.Drawing.Point(192, 65);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(556, 259);
+            this.title.TabIndex = 2;
+            // 
+            // quitButton
+            // 
+            this.quitButton.AutoSize = true;
+            this.quitButton.BackColor = System.Drawing.Color.Transparent;
+            this.quitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.quitButton.Location = new System.Drawing.Point(231, 494);
+            this.quitButton.Name = "quitButton";
+            this.quitButton.Size = new System.Drawing.Size(300, 50);
+            this.quitButton.TabIndex = 1;
+            this.quitButton.MouseEnter += new System.EventHandler(this.quitButton_MouseEnter);
+            this.quitButton.MouseLeave += new System.EventHandler(this.quitButton_MouseLeave);
+            // 
+            // highscoreButton
+            // 
+            this.highscoreButton.AutoSize = true;
+            this.highscoreButton.BackColor = System.Drawing.Color.Transparent;
+            this.highscoreButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.highscoreButton.Location = new System.Drawing.Point(231, 406);
+            this.highscoreButton.Name = "highscoreButton";
+            this.highscoreButton.Size = new System.Drawing.Size(300, 50);
+            this.highscoreButton.TabIndex = 1;
+            this.highscoreButton.MouseEnter += new System.EventHandler(this.highscoreButton_MouseEnter);
+            this.highscoreButton.MouseLeave += new System.EventHandler(this.highscoreButton_MouseLeave);
             // 
             // playButton
             // 
             this.playButton.AutoSize = true;
+            this.playButton.BackColor = System.Drawing.Color.Transparent;
             this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.playButton.Location = new System.Drawing.Point(185, 368);
+            this.playButton.Location = new System.Drawing.Point(231, 319);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(314, 65);
+            this.playButton.Size = new System.Drawing.Size(300, 50);
             this.playButton.TabIndex = 1;
             this.playButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.playButton_MouseClick);
             this.playButton.MouseEnter += new System.EventHandler(this.playButton_MouseEnter);
             this.playButton.MouseLeave += new System.EventHandler(this.playButton_MouseLeave);
             // 
-            // highscoreButton
-            // 
-            this.highscoreButton.AutoSize = true;
-            this.highscoreButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.highscoreButton.Location = new System.Drawing.Point(185, 479);
-            this.highscoreButton.Name = "highscoreButton";
-            this.highscoreButton.Size = new System.Drawing.Size(314, 65);
-            this.highscoreButton.TabIndex = 1;
-            this.highscoreButton.MouseEnter += new System.EventHandler(this.highscoreButton_MouseEnter);
-            this.highscoreButton.MouseLeave += new System.EventHandler(this.highscoreButton_MouseLeave);
-            // 
-            // quitButton
-            // 
-            this.quitButton.AutoSize = true;
-            this.quitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.quitButton.Location = new System.Drawing.Point(185, 590);
-            this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(314, 65);
-            this.quitButton.TabIndex = 1;
-            this.quitButton.MouseEnter += new System.EventHandler(this.quitButton_MouseEnter);
-            this.quitButton.MouseLeave += new System.EventHandler(this.quitButton_MouseLeave);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(682, 753);
+            this.ClientSize = new System.Drawing.Size(568, 604);
+            this.Controls.Add(this.title);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.highscoreButton);
             this.Controls.Add(this.playButton);
+            this.DoubleBuffered = true;
             this.Name = "MainForm";
-            this.Text = "짝 맞추기 게임";
+            this.Text = "Matching Game";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel playButton;
-        private System.Windows.Forms.Panel highscoreButton;
-        private System.Windows.Forms.Panel quitButton;
+        private System.Windows.Forms.Timer timer;
+        private DoubleBufferPanel title;
+        private DoubleBufferPanel playButton;
+        private DoubleBufferPanel highscoreButton;
+        private DoubleBufferPanel quitButton;
     }
 }
 

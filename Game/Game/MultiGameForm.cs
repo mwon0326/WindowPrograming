@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Game
 {
-    public partial class MultiGameForm : Form, GamePlay
+    public partial class MultiGameForm : Form
     {
-        Bitmap back;
+        GameImage back;
         int[] game;
         Status[] status;
         PictureBox[] picture;
@@ -21,6 +22,15 @@ namespace Game
         int timer = 0;
         int close1, close2;
         int levelTag;
+        const int EASY_P = 100;
+        const int MINUS = 10;
+        const int NORMAL_P = 200;
+        const int EASY = 25;
+        const int NORMAL = 51;
+        int player1Score = 0;
+        int player2Score = 0;
+        int rotation = 0;
+        int prevKey;
 
         public MultiGameForm(int tag)
         {
@@ -51,25 +61,372 @@ namespace Game
                 picture[i].Height = 100;
                 picture[i].Left = ((i % level) * 5 + (i % level) * 80) + 10;
                 picture[i].Top = ((i / level) * 5 + (i / level) * 100) + 10;
-                picture[i].Click += picture_Click;
                 picture[i].Name = i.ToString();
                 gamePan.Controls.Add(picture[i]);
+                
             }
         }
 
         private void MultiGameForm_Load(object sender, EventArgs e)
         {
-
+            StartGame();
+            playerScore1.Text = "1P Score : " + player1Score;
+            playerScore2.Text = "2P Score : " + player2Score;
         }
 
-        public void StartGame() { }
-        public void picture_Click(object sender, EventArgs e) { }
-        public void SuccCheck() { }
-        public void CloseThreading() { }
+        public void StartGame()
+        {
+            Random r = new Random();
+            bool check = false;
+
+            openCount = 0;
+            timer = 0;
+            if (gameTimer.Enabled == true)
+                gameTimer.Stop();
+
+            for (int i = 0; i < game.Length; i++, check = false)
+            {
+                int templ = r.Next(0, game.Length);
+
+                for (int j = 0; j < i; j++)
+                {
+                    if (game[j] == templ)
+                    {
+                        i--;
+                        check = true;
+                        break;
+                    }
+                }
+
+                if (check)
+                    continue;
+
+                game[i] = templ;
+                status[i] = Status.CLOSE;
+                back = new GameImage(Game.Properties.Resources.back, 80, 100);
+                picture[i].Image = back.ResizeBitmap;
+            }
+            picture[0].BorderStyle = BorderStyle.Fixed3D;
+            prevKey = 0;
+        }
+
+        public void picture_Click(object sender, EventArgs e)
+        {
+            if (pic_click)
+                return;
+
+            PictureBox picTemp = (PictureBox)sender;
+            int num = int.Parse(picTemp.Name);
+            int match = -1;
+
+            if (status[num] == Status.CLOSE)
+            {
+                int value = game[num];
+                int realV = value / 2;
+
+                ImageChange(picTemp, realV);
+
+                for (int i = 0; i < status.Length; i++)
+                {
+                    if (status[i] == Status.OPEN)
+                    {
+                        match = i;
+                        break;
+                    }
+                }
+
+                if (match != -1)
+                {
+                    if (game[match] / 2 == realV)
+                    {
+                        status[match] = Status.MATCH;
+                        status[num] = Status.MATCH;
+                        
+                        if (levelTag == 1)
+                        {
+                            if (rotation % 2 == 0)
+                                player1Score += EASY_P;
+                            else if (rotation % 2 == 1)
+                                player2Score += EASY_P;
+                        }
+                        else if (levelTag == 2)
+                        {
+                            if (rotation % 2 == 0)
+                                player1Score += NORMAL_P;
+                            else if (rotation % 2 == 1)
+                                player2Score += NORMAL_P;
+                        }
+                    }
+                    else
+                    {
+                        pic_click = true;
+
+                        close1 = match;
+                        close2 = num;
+
+                        Thread th = new Thread(new ThreadStart(CloseThreading));
+                        th.Start();
+
+                        if (rotation % 2 == 0 && player1Score != 0)
+                            player1Score -= MINUS;
+                        else if (rotation % 2 == 1 && player2Score != 0)
+                            player2Score -= MINUS;
+
+                    }
+
+                    openCount++;
+                }
+                else
+                    status[num] = Status.OPEN;
+            }
+
+            playerScore1.Text = "1P Score : " + player1Score;
+            playerScore2.Text = "2P Score : " + player2Score;
+            SuccCheck();
+        }
+
+        public void SuccCheck()
+        {
+            foreach (Status statusC in status)
+            {
+                if (statusC != Status.MATCH)
+                    return;
+            }
+            gameTimer.Stop();
+        }
+
+        public void CloseThreading()
+        {
+            Thread.Sleep(1000);
+
+            ImageChange(picture[close1], -1);
+            ImageChange(picture[close2], -1);
+
+            status[close1] = Status.CLOSE;
+            status[close2] = Status.CLOSE;
+
+            pic_click = false;
+            rotation += 1;
+        }
+
         public void gameTimer_Tick(object sender, EventArgs e)
         {
             timer += 1;
         }
-        public void ImageChange(PictureBox pic, int value) { }
+
+        private void MultiGameForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            int maxIndex = 0;
+
+            if (levelTag == 1)
+                maxIndex = EASY;
+            else if (levelTag == 2)
+                maxIndex = NORMAL;
+
+            if (rotation % 2 == 0)
+            {
+                if (e.KeyCode == Keys.Left && prevKey != 0)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey - 1].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey -= 1;
+                }
+                else if (e.KeyCode == Keys.Right && prevKey != maxIndex)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey + 1].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey += 1;
+                }
+                else if (e.KeyCode == Keys.Up && prevKey - 7 >= 0)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey - 7].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey -= 7;
+                }
+                else if (e.KeyCode == Keys.Down && prevKey + 7 <= maxIndex)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey + 7].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey += 7;
+                }
+                else if (e.KeyCode == Keys.Enter)
+                {
+                    picture_Click(picture[prevKey], null);
+                }
+            }
+            else if (rotation %2 == 1)
+            {
+                if (e.KeyCode == Keys.A && prevKey != 0)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey - 1].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey -= 1;
+                }
+                else if (e.KeyCode == Keys.D && prevKey != maxIndex)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey + 1].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey += 1;
+                }
+                else if (e.KeyCode == Keys.W && prevKey - 7 >= 0)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey - 7].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey -= 7;
+                }
+                else if (e.KeyCode == Keys.S && prevKey + 7 <= maxIndex)
+                {
+                    picture[prevKey].BorderStyle = BorderStyle.None;
+                    picture[prevKey + 7].BorderStyle = BorderStyle.Fixed3D;
+                    prevKey += 7;
+                }
+                else if (e.KeyCode == Keys.Enter)
+                {
+                    picture_Click(picture[prevKey], null);
+                }
+            }
+        }
+
+        public void ImageChange(PictureBox pic, int value)
+        {
+            GameImage bitmap;
+            switch ((value))
+            {
+                case 0:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_a, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 1:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_2, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 2:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_3, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 3:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_4, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 4:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_5, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 5:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_6, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 6:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_7, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 7:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_8, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 8:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_9, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 9:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_10, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 10:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_j, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 11:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_q, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 12:
+                    bitmap = new GameImage(Game.Properties.Resources.spade_k, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 13:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_a, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 14:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_2, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 15:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_3, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 16:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_4, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 17:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_5, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 18:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_6, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 19:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_7, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 20:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_8, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 21:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_9, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 22:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_10, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 23:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_j, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 24:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_q, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                case 25:
+                    bitmap = new GameImage(Game.Properties.Resources.heart_k, 80, 100);
+                    pic.Image = bitmap.ResizeBitmap;
+                    break;
+
+                default:
+                    pic.Image = back.ResizeBitmap;
+                    break;
+            }
+        }
     }
 }
+
