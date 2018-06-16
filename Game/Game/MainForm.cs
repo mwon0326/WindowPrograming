@@ -46,7 +46,7 @@ namespace Game
             background = new GameImage(Game.Properties.Resources.background, 400, 700);
             backGround = background.ResizeBitmap;
 
-            kurbi = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 8.0f, 600, 150);
+            kurbi = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 20.0f, 600, 150);
             kurbi.setPosition(400, 450);
             previousTime = DateTime.Now;
         }

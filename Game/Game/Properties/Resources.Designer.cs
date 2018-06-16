@@ -263,6 +263,16 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap kurbi_role {
+            get {
+                object obj = ResourceManager.GetObject("kurbi_role", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap kurbi_run {
             get {
                 object obj = ResourceManager.GetObject("kurbi_run", resourceCulture);
@@ -276,16 +286,6 @@ namespace Game.Properties {
         internal static System.Drawing.Bitmap multi {
             get {
                 object obj = ResourceManager.GetObject("multi", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap multi_s {
-            get {
-                object obj = ResourceManager.GetObject("multi_s", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,16 +336,6 @@ namespace Game.Properties {
         internal static System.Drawing.Bitmap single {
             get {
                 object obj = ResourceManager.GetObject("single", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap single_s {
-            get {
-                object obj = ResourceManager.GetObject("single_s", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

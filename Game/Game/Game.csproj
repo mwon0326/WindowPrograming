@@ -453,5 +453,8 @@
   <ItemGroup>
     <None Include="Resources\title.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kurbi_role.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
