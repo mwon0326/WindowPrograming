@@ -250,19 +250,24 @@ namespace Game
                     return;
             }
             gameTimer.Stop();
+            string path = "";
 
-            string path = Application.StartupPath + @"\ranking.txt";
+            if (levelTag == 1)
+                path = Application.StartupPath + @"\ranking.txt";
+            else if (levelTag == 2)
+                path = Application.StartupPath + @"\ranking1.txt";
+
             System.IO.FileInfo fl = new FileInfo(path);
             if (!fl.Exists)
             {
                 File.Create(path);
-                StreamWriter sw = new StreamWriter(Application.StartupPath + @"\ranking.txt");
+                StreamWriter sw = new StreamWriter(path);
                 sw.WriteLine(score);
                 sw.Close();
             }
             else
             {
-                StreamWriter sw = new StreamWriter(Application.StartupPath + @"\ranking.txt", true);
+                StreamWriter sw = new StreamWriter(path, true);
                 sw.WriteLine(score);
                 sw.Close();
             }

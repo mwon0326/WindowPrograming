@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.scoreLabel = new System.Windows.Forms.Label();
+            this.easyScoreLabel = new System.Windows.Forms.Label();
             this.backButton = new Game.DoubleBufferPanel();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.normalScoreLabel = new System.Windows.Forms.Label();
+            this.easyLabel = new System.Windows.Forms.Label();
+            this.normalLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // scoreLabel
+            // easyScoreLabel
             // 
-            this.scoreLabel.AutoSize = true;
-            this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
-            this.scoreLabel.Font = new System.Drawing.Font("Komikazoom", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreLabel.Location = new System.Drawing.Point(194, 71);
-            this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(0, 53);
-            this.scoreLabel.TabIndex = 1;
-            this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.easyScoreLabel.AutoSize = true;
+            this.easyScoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.easyScoreLabel.Font = new System.Drawing.Font("Komikazoom", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.easyScoreLabel.Location = new System.Drawing.Point(194, 71);
+            this.easyScoreLabel.Name = "easyScoreLabel";
+            this.easyScoreLabel.Size = new System.Drawing.Size(0, 53);
+            this.easyScoreLabel.TabIndex = 1;
             // 
             // backButton
             // 
@@ -63,12 +65,49 @@
             this.timer.Interval = 10;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // normalScoreLabel
+            // 
+            this.normalScoreLabel.AutoSize = true;
+            this.normalScoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.normalScoreLabel.Font = new System.Drawing.Font("Komikazoom", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.normalScoreLabel.Location = new System.Drawing.Point(243, 71);
+            this.normalScoreLabel.Name = "normalScoreLabel";
+            this.normalScoreLabel.Size = new System.Drawing.Size(0, 53);
+            this.normalScoreLabel.TabIndex = 1;
+            // 
+            // easyLabel
+            // 
+            this.easyLabel.AutoSize = true;
+            this.easyLabel.BackColor = System.Drawing.Color.Transparent;
+            this.easyLabel.Font = new System.Drawing.Font("Komikazoom", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.easyLabel.Location = new System.Drawing.Point(215, 109);
+            this.easyLabel.Name = "easyLabel";
+            this.easyLabel.Size = new System.Drawing.Size(101, 53);
+            this.easyLabel.TabIndex = 1;
+            this.easyLabel.Text = "EASY";
+            this.easyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // normalLabel
+            // 
+            this.normalLabel.AutoSize = true;
+            this.normalLabel.BackColor = System.Drawing.Color.Transparent;
+            this.normalLabel.Font = new System.Drawing.Font("Komikazoom", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.normalLabel.Location = new System.Drawing.Point(390, 71);
+            this.normalLabel.Name = "normalLabel";
+            this.normalLabel.Size = new System.Drawing.Size(151, 53);
+            this.normalLabel.TabIndex = 1;
+            this.normalLabel.Text = "NORMAL";
+            this.normalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // RankingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 344);
-            this.Controls.Add(this.scoreLabel);
+            this.Controls.Add(this.normalLabel);
+            this.Controls.Add(this.easyLabel);
+            this.Controls.Add(this.normalScoreLabel);
+            this.Controls.Add(this.easyScoreLabel);
             this.Controls.Add(this.backButton);
             this.DoubleBuffered = true;
             this.Name = "RankingForm";
@@ -83,7 +122,10 @@
         #endregion
 
         private DoubleBufferPanel backButton;
-        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label easyScoreLabel;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label normalScoreLabel;
+        private System.Windows.Forms.Label easyLabel;
+        private System.Windows.Forms.Label normalLabel;
     }
 }
