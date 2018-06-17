@@ -514,5 +514,8 @@
   <ItemGroup>
     <None Include="Resources\mback.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green-Greens_1.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

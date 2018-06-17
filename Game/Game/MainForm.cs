@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -50,6 +51,8 @@ namespace Game
             kurbi.setPosition(400, 450);
 
             previousTime = DateTime.Now;
+            SoundPlayer sound = new SoundPlayer(Game.Properties.Resources.Green_Greens_1);
+            sound.Play();
         }
 
         private void playButton_MouseEnter(object sender, EventArgs e)

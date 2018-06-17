@@ -36,7 +36,7 @@ namespace Game
         private void WinForm_Load(object sender, EventArgs e)
         {
             this.ClientSize = new Size(400, 500);
-            scoreLabel.Left = (this.ClientSize.Width - scoreLabel.Width) / 2;
+            scoreLabel.Left = 50;
             quitButton.Left = (this.ClientSize.Width - quitButton.Width) / 2;
             quitButton.Top = 300;
             scoreLabel.Top = 150;
@@ -48,7 +48,7 @@ namespace Game
                 if (winnerT == 1)
                     scoreLabel.Text = level + " WINNER PLAYER1\n" + "SCORE : " + score_;
                 else if (winnerT == 2)
-                    scoreLabel.Text = level + " WINNER PLAYER1\n" + "SCORE : " + score_;
+                    scoreLabel.Text = level + " WINNER PLAYER2\n" + "SCORE : " + score_;
                 else if (winnerT == 3)
                     scoreLabel.Text = level + " DRAW\n" + "SCORE : " + score_;
             }

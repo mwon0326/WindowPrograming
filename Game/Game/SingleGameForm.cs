@@ -430,7 +430,8 @@ namespace Game
                     break;
 
                 default:
-                    pic.Image = back.ResizeBitmap;
+                    //pic.Image = back.ResizeBitmap;
+                    Invoke(new Action(delegate { pic.Image = back.ResizeBitmap; }));
                     break;
             }
         }
