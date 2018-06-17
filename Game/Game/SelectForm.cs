@@ -13,7 +13,7 @@ namespace Game
 {
     public partial class SelectForm : Form
     {
-        GameImage single, multi;
+        GameImage single, multi, back, backS;
         GameImage easy, normal;
         GameImage selectE, selectN;
         GameImage background;
@@ -81,25 +81,51 @@ namespace Game
         private void singleEasyButton_Click(object sender, EventArgs e)
         {
             SingleGameForm sform = new SingleGameForm(1);
-            sform.ShowDialog();
+            sform.Show();
+            Program.ac.MainForm = sform;
+            this.Close();
         }
 
         private void singleNormalButton_Click(object sender, EventArgs e)
         {
             SingleGameForm sform = new SingleGameForm(2);
-            sform.ShowDialog();
+            sform.Show();
+            Program.ac.MainForm = sform;
+            this.Close();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Show();
+            Program.ac.MainForm = main;
+            this.Close();
+        }
+
+        private void backButton_MouseEnter(object sender, EventArgs e)
+        {
+            backButton.BackgroundImage = backS.ResizeBitmap;
+        }
+
+        private void backButton_MouseLeave(object sender, EventArgs e)
+        {
+            backButton.BackgroundImage = back.ResizeBitmap;
         }
 
         private void multiEasyButton_Click(object sender, EventArgs e)
         {
             MultiGameForm mform = new MultiGameForm(1);
-            mform.ShowDialog();
+            mform.Show();
+            Program.ac.MainForm = mform;
+            this.Close();
         }
 
         private void multiNormalButton_Click(object sender, EventArgs e)
         {
             MultiGameForm mform = new MultiGameForm(2);
-            mform.ShowDialog();
+            mform.Show();
+            Program.ac.MainForm = mform;
+            this.Close();
         }
 
         public SelectForm()
@@ -127,6 +153,10 @@ namespace Game
             selectE = new GameImage(Game.Properties.Resources.easy_s, 200, 50);
             selectN = new GameImage(Game.Properties.Resources.normal_s, 200, 50);
 
+            back = new GameImage(Game.Properties.Resources.backB, 200, 50);
+            backS = new GameImage(Game.Properties.Resources.s_backB, 200, 50);
+
+            backButton.BackgroundImage = back.ResizeBitmap;
             singleEasyButton.BackgroundImage = easy.ResizeBitmap;
             singleNormalButton.BackgroundImage = normal.ResizeBitmap;
             multiEasyButton.BackgroundImage = easy.ResizeBitmap;
@@ -151,6 +181,9 @@ namespace Game
             singlePanel.Top = singleEasyButton.Top - 120;
             multiPanel.Left = singlePanel.Right + 90;
             multiPanel.Top = singlePanel.Top;
+
+            backButton.Left = (this.ClientSize.Width - backButton.Width) / 2;
+            backButton.Top = (multiNormalButton.Bottom + 20);
 
             kurbi = new AnimationImage(Game.Properties.Resources.kurbi_role, 9, 8.0f, 600, 150);
             kurbi.setPosition(400, 450);

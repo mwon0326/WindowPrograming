@@ -69,6 +69,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RankingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankingForm.Designer.cs">
+      <DependentUpon>RankingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     <Compile Include="SingleGameForm.Designer.cs">
       <DependentUpon>SingleGameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm.Designer.cs">
+      <DependentUpon>WinForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,11 +104,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RankingForm.resx">
+      <DependentUpon>RankingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectForm.resx">
       <DependentUpon>SelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SingleGameForm.resx">
       <DependentUpon>SingleGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm.resx">
+      <DependentUpon>WinForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -482,7 +500,19 @@
     <None Include="Resources\kirby2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\s_backB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backB.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\multi_back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mback.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

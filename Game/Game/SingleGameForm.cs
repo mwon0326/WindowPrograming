@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace Game
 {
@@ -249,6 +250,25 @@ namespace Game
                     return;
             }
             gameTimer.Stop();
+
+            string path = Application.StartupPath + @"\ranking.txt";
+            System.IO.FileInfo fl = new FileInfo(path);
+            if (!fl.Exists)
+            {
+                File.Create(path);
+                StreamWriter sw = new StreamWriter(Application.StartupPath + @"\ranking.txt");
+                sw.WriteLine(score);
+                sw.Close();
+            }
+            else
+            {
+                StreamWriter sw = new StreamWriter(Application.StartupPath + @"\ranking.txt", true);
+                sw.WriteLine(score);
+                sw.Close();
+            }
+            WinForm win = new WinForm(levelTag, score, 1, 0);
+            win.ShowDialog();
+            this.Close();
         }
 
         public void CloseThreading()

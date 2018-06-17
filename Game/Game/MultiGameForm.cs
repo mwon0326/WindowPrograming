@@ -133,7 +133,7 @@ namespace Game
         private void MultiGameForm_Load(object sender, EventArgs e)
         {
             this.ClientSize = new Size(1200, 700);
-            background = new GameImage(Game.Properties.Resources.multi_back, 400, 700);
+            background = new GameImage(Game.Properties.Resources.mback, 400, 700);
             backGround = background.ResizeBitmap;
 
             pan = new GameImage(Game.Properties.Resources.kurbi_pan, panWid, pandHei);
@@ -289,6 +289,29 @@ namespace Game
                     return;
             }
             gameTimer.Stop();
+
+            int score = 0;
+            int winner = 0;
+
+            if (player1Score > player2Score)
+            {
+                score = player1Score;
+                winner = 1;
+            }
+            else if (player2Score > player1Score)
+            {
+                score = player2Score;
+                winner = 2;
+            }
+            else if (player2Score == player1Score)
+            {
+                score = player1Score;
+                winner = 3;
+            }
+
+            WinForm win = new WinForm(levelTag, score, 2, winner);
+            win.ShowDialog();
+            this.Close();
         }
 
         public void CloseThreading()

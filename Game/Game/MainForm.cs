@@ -95,6 +95,17 @@ namespace Game
             Invalidate();
         }
 
+        private void highscoreButton_Click(object sender, EventArgs e)
+        {
+            RankingForm rank = new RankingForm();
+            rank.ShowDialog();
+        }
+
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
             for (int x = bgOffset; x < 900; x += 400)
@@ -111,7 +122,10 @@ namespace Game
         private void playButton_MouseClick(object sender, EventArgs e)
         {
             SelectForm s = new SelectForm();
-            s.ShowDialog();
+            Program.ac.MainForm = s;
+            s.Show();
+
+            this.Close();
         }
     }
 }

@@ -61,6 +61,7 @@
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(300, 50);
             this.quitButton.TabIndex = 1;
+            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             this.quitButton.MouseEnter += new System.EventHandler(this.quitButton_MouseEnter);
             this.quitButton.MouseLeave += new System.EventHandler(this.quitButton_MouseLeave);
             // 
@@ -73,6 +74,7 @@
             this.highscoreButton.Name = "highscoreButton";
             this.highscoreButton.Size = new System.Drawing.Size(300, 50);
             this.highscoreButton.TabIndex = 1;
+            this.highscoreButton.Click += new System.EventHandler(this.highscoreButton_Click);
             this.highscoreButton.MouseEnter += new System.EventHandler(this.highscoreButton_MouseEnter);
             this.highscoreButton.MouseLeave += new System.EventHandler(this.highscoreButton_MouseLeave);
             // 

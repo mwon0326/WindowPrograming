@@ -73,6 +73,16 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap backB {
+            get {
+                object obj = ResourceManager.GetObject("backB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
@@ -353,6 +363,16 @@ namespace Game.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap mback {
+            get {
+                object obj = ResourceManager.GetObject("mback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap multi {
             get {
                 object obj = ResourceManager.GetObject("multi", resourceCulture);
@@ -406,6 +426,26 @@ namespace Game.Properties {
         internal static System.Drawing.Bitmap quit_s {
             get {
                 object obj = ResourceManager.GetObject("quit_s", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap ranking {
+            get {
+                object obj = ResourceManager.GetObject("ranking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_backB {
+            get {
+                object obj = ResourceManager.GetObject("s_backB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

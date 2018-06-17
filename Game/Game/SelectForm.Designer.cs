@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.backButton = new Game.DoubleBufferPanel();
             this.multiPanel = new Game.DoubleBufferPanel();
             this.singlePanel = new Game.DoubleBufferPanel();
             this.multiNormalButton = new Game.DoubleBufferPanel();
@@ -43,6 +44,18 @@
             this.timer.Enabled = true;
             this.timer.Interval = 10;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.backButton.Location = new System.Drawing.Point(249, 385);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(300, 50);
+            this.backButton.TabIndex = 2;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.MouseEnter += new System.EventHandler(this.backButton_MouseEnter);
+            this.backButton.MouseLeave += new System.EventHandler(this.backButton_MouseLeave);
             // 
             // multiPanel
             // 
@@ -117,6 +130,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(507, 501);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.multiPanel);
             this.Controls.Add(this.singlePanel);
             this.Controls.Add(this.multiNormalButton);
@@ -140,5 +154,6 @@
         private DoubleBufferPanel multiNormalButton;
         private DoubleBufferPanel singlePanel;
         private DoubleBufferPanel multiPanel;
+        private DoubleBufferPanel backButton;
     }
 }
