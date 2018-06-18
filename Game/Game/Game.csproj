@@ -130,7 +130,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\KAMIKZOM.ttf" />
+    <None Include="Resources\KAMIKZOM.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\multi_label.png" />
   </ItemGroup>
   <ItemGroup>

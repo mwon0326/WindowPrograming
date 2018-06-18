@@ -121,7 +121,7 @@ namespace Game
 
             for (int i = 0; i < game.Length; i++, check = false)
             {
-                int templ = r.Next(0, game.Length);
+                int templ = r.Next(0, game.Length); //0부터 배열인덱스만큼의 숫자 랜덤 발생
 
                 for (int j = 0; j < i; j++)
                 {
