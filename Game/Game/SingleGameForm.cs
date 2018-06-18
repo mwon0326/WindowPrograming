@@ -13,7 +13,7 @@ using System.IO;
 
 namespace Game
 {
-    public enum Status { CLOSE, OPEN, MATCH }
+    public enum Status { CLOSE, OPEN, MATCH };
 
     public partial class SingleGameForm : Form
     {
