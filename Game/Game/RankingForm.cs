@@ -66,9 +66,6 @@ namespace Game
 
         private void RankingForm_Load(object sender, EventArgs e)
         {
-            PrivateFontCollection ft = new PrivateFontCollection();
-            ft.AddFontFile("./Resources/KAMIKZOM.ttf");
-
             int rank, rankN;
             int[] array;
             int[] nArray;
@@ -80,12 +77,8 @@ namespace Game
 
             easyLabel.Left = 50;
             easyLabel.Top = 70;
-            easyLabel.Font = new Font(ft.Families[0], 24f);
-            easyScoreLabel.Font = new Font(ft.Families[0], 24f);
             normalLabel.Left = 220;
             normalLabel.Top = 70;
-            normalLabel.Font = new Font(ft.Families[0], 24f);
-            normalScoreLabel.Font = new Font(ft.Families[0], 24f);
             ranking = new GameImage(Game.Properties.Resources.ranking, 200, 50);
 
             backButton.Left = (this.ClientSize.Width - backButton.Width) / 2;

@@ -13,7 +13,7 @@ using System.IO;
 
 namespace Game
 {
-    public enum Status { CLOSE, OPEN, MATCH }
+    public enum Status { CLOSE, OPEN, MATCH };
 
     public partial class SingleGameForm : Form
     {
@@ -79,9 +79,12 @@ namespace Game
 
         public void SingleEasyGameForm_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             PrivateFontCollection ft = new PrivateFontCollection();
             //ft.AddFontFile("./Resources/KAMIKZOM.ttf");
 
+=======
+>>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
             background = new GameImage(Game.Properties.Resources.single_background, 400, 700);
             backGround = background.ResizeBitmap;
 
@@ -92,7 +95,10 @@ namespace Game
             scoreLabel.Text = "Score :" + score;
             kirbyRun = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 20.0f, 600, 150);
             kirbyStar = new AnimationImage(Game.Properties.Resources.kurbi_star, 8, 8.0f, 600, 150);
+<<<<<<< HEAD
             //scoreLabel.Font = new Font(ft.Families[0], 24f);
+=======
+>>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
 
             if (levelTag == 1)
             {
@@ -217,7 +223,6 @@ namespace Game
                     {
                         status[match] = Status.MATCH;
                         status[num] = Status.MATCH;
-
                         if (levelTag == 1)
                             score += EASY_P;
                         else if (levelTag == 2)

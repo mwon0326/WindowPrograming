@@ -132,9 +132,12 @@ namespace Game
 
         private void MultiGameForm_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             PrivateFontCollection ft = new PrivateFontCollection();
            // ft.AddFontFile("./Resources/KAMIKZOM.ttf");
 
+=======
+>>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
             this.ClientSize = new Size(1200, 700);
             background = new GameImage(Game.Properties.Resources.mback, 400, 700);
             backGround = background.ResizeBitmap;
@@ -171,9 +174,12 @@ namespace Game
             playerScore1.Text = "1P Score : " + player1Score;
             playerScore2.Text = "2P Score : " + player2Score;
             previousTime = DateTime.Now;
+<<<<<<< HEAD
 
             //playerScore1.Font = new Font(ft.Families[0], 24f);
             //playerScore2.Font = new Font(ft.Families[0], 24f);
+=======
+>>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
         }
 
         public void StartGame()

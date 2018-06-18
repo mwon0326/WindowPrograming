@@ -35,10 +35,13 @@ namespace Game
 
         private void WinForm_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             PrivateFontCollection ft = new PrivateFontCollection();
             //ft.AddFontFile("./Resources/KAMIKZOM.ttf");
 
             //scoreLabel.Font = new Font(ft.Families[0], 24f);
+=======
+>>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
             this.ClientSize = new Size(400, 500);
             scoreLabel.Left = 50;
             quitButton.Left = (this.ClientSize.Width - quitButton.Width) / 2;
