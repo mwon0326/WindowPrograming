@@ -80,7 +80,7 @@ namespace Game
         public void SingleEasyGameForm_Load(object sender, EventArgs e)
         {
             PrivateFontCollection ft = new PrivateFontCollection();
-            ft.AddFontFile("./Resources/KAMIKZOM.ttf");
+            //ft.AddFontFile("./Resources/KAMIKZOM.ttf");
 
             background = new GameImage(Game.Properties.Resources.single_background, 400, 700);
             backGround = background.ResizeBitmap;
@@ -92,7 +92,7 @@ namespace Game
             scoreLabel.Text = "Score :" + score;
             kirbyRun = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 20.0f, 600, 150);
             kirbyStar = new AnimationImage(Game.Properties.Resources.kurbi_star, 8, 8.0f, 600, 150);
-            scoreLabel.Font = new Font(ft.Families[0], 24f);
+            //scoreLabel.Font = new Font(ft.Families[0], 24f);
 
             if (levelTag == 1)
             {
@@ -121,7 +121,7 @@ namespace Game
 
             for (int i = 0; i < game.Length; i++, check = false)
             {
-                int templ = r.Next(0, game.Length); //0부터 배열인덱스만큼의 숫자 랜덤 발생
+                int templ = r.Next(0, game.Length);
 
                 for (int j = 0; j < i; j++)
                 {
