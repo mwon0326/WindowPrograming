@@ -130,8 +130,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <None Include="Resources\multi_label.png" />
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +145,6 @@
     <None Include="Resources\normal_button.png" />
   </ItemGroup>
   <ItemGroup>
->>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
     <None Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>

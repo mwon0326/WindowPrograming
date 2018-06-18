@@ -79,12 +79,6 @@ namespace Game
 
         public void SingleEasyGameForm_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            PrivateFontCollection ft = new PrivateFontCollection();
-            //ft.AddFontFile("./Resources/KAMIKZOM.ttf");
-
-=======
->>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
             background = new GameImage(Game.Properties.Resources.single_background, 400, 700);
             backGround = background.ResizeBitmap;
 
@@ -95,10 +89,6 @@ namespace Game
             scoreLabel.Text = "Score :" + score;
             kirbyRun = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 20.0f, 600, 150);
             kirbyStar = new AnimationImage(Game.Properties.Resources.kurbi_star, 8, 8.0f, 600, 150);
-<<<<<<< HEAD
-            //scoreLabel.Font = new Font(ft.Families[0], 24f);
-=======
->>>>>>> 42edcd98ae07df888f89674ac699874a640fec17
 
             if (levelTag == 1)
             {
@@ -127,7 +117,7 @@ namespace Game
 
             for (int i = 0; i < game.Length; i++, check = false)
             {
-                int templ = r.Next(0, game.Length);
+                int templ = r.Next(0, game.Length); //0부터 배열인덱스만큼의 숫자 랜덤 발생
 
                 for (int j = 0; j < i; j++)
                 {
@@ -172,7 +162,7 @@ namespace Game
 
         private void imageTimer_Tick(object sender, EventArgs e)
         {
-            var now = DateTime.Now;
+            /*var now = DateTime.Now;
             var elapsed = now - previousTime;
             previousTime = now;
             var msec = (int)elapsed.TotalMilliseconds;
@@ -189,7 +179,7 @@ namespace Game
             Invalidate();
 
             if (kirbyTag == 1)
-                drawCount++;
+                drawCount++;*/
         }
 
         public void picture_Click(object sender, EventArgs e)

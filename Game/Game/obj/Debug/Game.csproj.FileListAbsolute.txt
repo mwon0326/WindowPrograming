@@ -1,0 +1,15 @@
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.MainForm.resources
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.MultiGameForm.resources
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.RankingForm.resources
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.SelectForm.resources
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.SingleGameForm.resources
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.WinForm.resources
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+C:\Users\mwon0\Desktop\병아리\Game\Game\bin\Debug\Game.exe.config
+C:\Users\mwon0\Desktop\병아리\Game\Game\bin\Debug\Game.exe
+C:\Users\mwon0\Desktop\병아리\Game\Game\bin\Debug\Game.pdb
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.Properties.Resources.resources
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.exe
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.pdb
+C:\Users\mwon0\Desktop\병아리\Game\Game\obj\Debug\Game.csprojAssemblyReference.cache
