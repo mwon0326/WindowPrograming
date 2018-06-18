@@ -217,7 +217,6 @@ namespace Game
                     {
                         status[match] = Status.MATCH;
                         status[num] = Status.MATCH;
-
                         if (levelTag == 1)
                             score += EASY_P;
                         else if (levelTag == 2)

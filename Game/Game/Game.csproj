@@ -133,6 +133,19 @@
     <None Include="Resources\KAMIKZOM.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\multi_label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\easy_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hard_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal_button.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.png" />
@@ -351,7 +364,43 @@
     <None Include="Resources\dia_q1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\highscore_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_button_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highscore_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highscore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_highscore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_quit.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\multi.png" />
@@ -364,6 +413,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timer.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\start.png" />
@@ -384,10 +448,22 @@
     <None Include="Resources\easy_s.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\multi_s.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\normal_s.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\single_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ground.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kriby_walk.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kurbi_run.png" />
@@ -397,6 +473,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kurbi_role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_background.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\single_background.png" />
