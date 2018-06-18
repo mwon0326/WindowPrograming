@@ -79,9 +79,6 @@ namespace Game
 
         public void SingleEasyGameForm_Load(object sender, EventArgs e)
         {
-            PrivateFontCollection ft = new PrivateFontCollection();
-            ft.AddFontFile("./Resources/KAMIKZOM.ttf");
-
             background = new GameImage(Game.Properties.Resources.single_background, 400, 700);
             backGround = background.ResizeBitmap;
 
@@ -92,7 +89,6 @@ namespace Game
             scoreLabel.Text = "Score :" + score;
             kirbyRun = new AnimationImage(Game.Properties.Resources.kurbi_run, 8, 20.0f, 600, 150);
             kirbyStar = new AnimationImage(Game.Properties.Resources.kurbi_star, 8, 8.0f, 600, 150);
-            scoreLabel.Font = new Font(ft.Families[0], 24f);
 
             if (levelTag == 1)
             {
