@@ -1,0 +1,16 @@
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\bin\Release\MatchingGame.exe.config
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\bin\Release\MatchingGame.exe
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\bin\Release\MatchingGame.pdb
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.MainForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.MultiGameForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.Properties.Resources.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.RankingForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.SelectForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.SingleGameForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.WinForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.csproj.GenerateResource.cache
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.csproj.CoreCompileInputs.cache
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.exe
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.pdb
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Release\MatchingGame.csprojAssemblyReference.cache
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\bin\Release\Resources\KAMIKZOM.ttf

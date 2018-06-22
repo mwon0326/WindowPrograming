@@ -1,0 +1,15 @@
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\bin\Debug\MatchingGame.exe.config
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\bin\Debug\MatchingGame.exe
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\bin\Debug\MatchingGame.pdb
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.csprojAssemblyReference.cache
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.Properties.Resources.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.csproj.GenerateResource.cache
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.csproj.CoreCompileInputs.cache
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.exe
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.pdb
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.MainForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.RankingForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.MultiGameForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.SelectForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.SingleGameForm.resources
+C:\Users\playe\source\repos\MatchingGame\MatchingGame\obj\Debug\MatchingGame.WinForm.resources
